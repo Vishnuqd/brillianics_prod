@@ -11918,7 +11918,35 @@ header.main-header-metal .header-sticky.active{
 }
 
 @media only screen and (max-width: 767px){
-    
+
+    /* Hero mobile: cut redundant copy — paragraph repeats the 3 proof points below */
+    .hero-stone .hero-content-stone .section-title > p{
+        display: none;
+    }
+
+    .hero-stone .hero-info-item-content-stone p{
+        display: none;
+    }
+
+    .hero-stone{
+        padding: 130px 0 40px;
+    }
+
+    .hero-stone .hero-content-stone .section-title h2{
+        font-size: clamp(28px, 8vw, 36px);
+        margin-bottom: 0;
+    }
+
+    .hero-stone .hero-content-body-stone{
+        margin-top: 20px;
+    }
+
+    .hero-stone .hero-info-list-stone{
+        gap: 14px;
+        margin-top: 24px;
+        padding-top: 20px;
+    }
+
     .hero-content-body-stone{
         gap: 20px;
     }
