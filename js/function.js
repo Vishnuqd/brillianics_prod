@@ -143,6 +143,27 @@
 		});
 	}
 
+	/* Homepage cinema hero background slider */
+	if ($('.hero-bg-slider-stone').length) {
+		new Swiper('.hero-bg-slider-stone', {
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true,
+			},
+			speed: 1400,
+			loop: true,
+			allowTouchMove: true,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.hero-bg-pagination-stone',
+				clickable: true,
+			},
+		});
+	}
+
 	/* testimonial Slider Stone JS */
 	if ($('.testimonial-slider-stone').length) {
 		const testimonial_slider_stone = new Swiper('.testimonial-slider-stone .swiper', {
@@ -522,5 +543,43 @@
 		}
 	}
 	/* Key Fact Item List End */
+
+	/* Floating WhatsApp — entrance + subtle scroll reaction */
+	(function initWhatsAppFloat() {
+		var $btn = $('.whatsapp-float');
+		if (!$btn.length) return;
+
+		var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		var scrolling = false;
+		var scrollTimer = null;
+		var lastY = window.scrollY || 0;
+
+		window.setTimeout(function () {
+			$btn.addClass('is-ready');
+		}, reduceMotion ? 0 : 400);
+
+		if (reduceMotion) return;
+
+		$window.on('scroll', function () {
+			var y = window.scrollY || 0;
+			var delta = y - lastY;
+			lastY = y;
+
+			var shift = Math.max(-10, Math.min(10, delta * 0.35));
+			$btn[0].style.setProperty('--wa-shift', shift + 'px');
+
+			if (!scrolling) {
+				scrolling = true;
+				$btn.addClass('is-scrolling');
+			}
+
+			window.clearTimeout(scrollTimer);
+			scrollTimer = window.setTimeout(function () {
+				scrolling = false;
+				$btn.removeClass('is-scrolling');
+				$btn[0].style.setProperty('--wa-shift', '0px');
+			}, 140);
+		});
+	})();
 	
 })(jQuery);
