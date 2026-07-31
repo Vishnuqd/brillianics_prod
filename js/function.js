@@ -427,32 +427,50 @@
 		});
 	}
 
-	/* Contact form validation */
-	var $contactform = $("#contactForm");
-	$contactform.validator({focus: false}).on("submit", function (event) {
-		if (!event.isDefaultPrevented()) {
-			event.preventDefault();
-			submitForm();
-		}
+	/* Contact form validation + submission via Web3Forms */
+	/* hCaptcha (via Web3Forms' own client script) verifies the widget
+	   server-side and injects its response token into the form automatically —
+	   no site key or extra JS needed here. */
+
+	$('form#contactForm').each(function () {
+		var $contactform = $(this);
+		$contactform.validator({focus: false}).on("submit", function (event) {
+			if (!event.isDefaultPrevented()) {
+				event.preventDefault();
+
+				/* Honeypot spam trap: Web3Forms auto-flags submissions where
+				   the hidden "botcheck" checkbox has been ticked by a bot. */
+				var $honeypot = $contactform.find('input[name="botcheck"]');
+				if ($honeypot.length && $honeypot.is(":checked")) {
+					return;
+				}
+
+				submitForm($contactform);
+			}
+		});
 	});
 
-	function submitForm(){
-		/* Ajax call to submit form */
+	function submitForm($contactform){
+		/* Ajax call to submit form to Web3Forms (https://web3forms.com) */
 		$.ajax({
 			type: "POST",
-			url: "form-process.php",
+			url: "https://api.web3forms.com/submit",
 			data: $contactform.serialize(),
-			success : function(text){
-				if (text === "success"){
-					formSuccess();
+			dataType: "json",
+			success : function(response, textStatus, jqXHR){
+				if (jqXHR.status === 200 && response && response.success !== false){
+					formSuccess($contactform);
 				} else {
-					submitMSG(false,text);
+					submitMSG(false, (response && response.message) || "Something went wrong. Please try again.");
 				}
+			},
+			error: function(){
+				submitMSG(false, "Something went wrong. Please try again or contact us by phone.");
 			}
 		});
 	}
 
-	function formSuccess(){
+	function formSuccess($contactform){
 		$contactform[0].reset();
 		submitMSG(true, "Message Sent Successfully!")
 	}

@@ -44,8 +44,8 @@
 	      "url": "https://www.brillianics.com/",
 	      "logo": "https://www.brillianics.com/images/logo.webp",
 	      "image": "https://www.brillianics.com/images/og-image.jpg",
-	      "telephone": ["+91-9738989797", "+91-8792272218"],
-	      "email": "info@brillianics.com",
+	      "telephone": ["+91-7795629161", "+91-8792272218"],
+	      "email": "vishnu@brillianics.com",
 	      "priceRange": "$$",
 	      "address": {
 	        "@type": "PostalAddress",
@@ -514,7 +514,7 @@
                                 <li>Residential & commercial installations</li>
                             </ul>
                             <a href="contact.html" class="btn-default btn-highlighted">Get a Free Quote</a>
-                            <a href="tel:+919738989797" class="service-feature-card-phone">+91-9738989797</a>
+                            <a href="tel:+917795629161" class="service-feature-card-phone">+91-7795629161</a>
                         </div>
                         <div class="service-item-content-stone">
                             <h2><a href="contact.html">Expert Door Solutions</a></h2>
@@ -804,7 +804,7 @@
                                 </div>
                                 <div class="cta-contact-item-content-stone">
                                     <p>Get Help Now</p>
-                                    <h3><a href="tel:+91-9738989797"> +91-9738989797, </br>+91-8792272218</a></h3>
+                                    <h3><a href="tel:+91-7795629161"> +91-7795629161, </br>+91-8792272218</a></h3>
                                 </div>
                             </div>
                             <div class="cta-contact-box-content-stone">
@@ -829,13 +829,18 @@
 
                         <!-- CTA Form Start -->
                         <div class="contact-form">
-                            <form id="contactForm" action="contact.html#" method="POST" data-toggle="validator">
-                                <div class="row">                                
+                            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" data-toggle="validator">
+                                <!-- Web3Forms config: replace the access_key below with your own from web3forms.com -->
+                                <input type="hidden" name="access_key" value="8a89ee1f-936a-4eac-8ca2-7c5c0a2bc9a3">
+                                <input type="hidden" name="subject" value="New Enquiry — Brillianics Homepage Form">
+                                <input type="hidden" name="from_name" value="Brillianics Website">
+                                <input type="hidden" name="ccemail" value="manoj@brillianics.com">
+                                <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                         <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" required>
                                         <div class="help-block with-errors"></div>
                                     </div>
-                                    
+
                                     <div class="form-group col-md-6 mb-4">
                                         <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" required>
                                         <div class="help-block with-errors"></div>
@@ -850,10 +855,20 @@
                                         <input type="text" name="phone" class="form-control" id="phone" placeholder="Phone No." required>
                                         <div class="help-block with-errors"></div>
                                     </div>
-                                    
+
                                     <div class="form-group col-md-12 mb-5">
                                         <textarea name="message" class="form-control" id="message" rows="3" placeholder="Write Message..."></textarea>
                                         <div class="help-block with-errors"></div>
+                                    </div>
+
+                                    <!-- Honeypot Spam Trap: hidden from humans, Web3Forms auto-detects this field -->
+                                    <div class="form-group hp-field" aria-hidden="true">
+                                        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+                                    </div>
+
+                                    <!-- hCaptcha widget (verified server-side by Web3Forms) -->
+                                    <div class="form-group col-md-12 mb-4">
+                                        <div class="h-captcha" data-captcha="true"></div>
                                     </div>
 
                                     <div class="col-md-12">
@@ -861,7 +876,7 @@
                                             <button type="submit" class="btn-default"><span>Send Message</span></button>
                                             <div id="msgSubmit" class="h3 hidden"></div>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -1119,9 +1134,10 @@
                         <!-- Footer Content Lists Start -->
                         <div class="footer-contact-lists-stone">
                             <ul>
-                                <li><a href="tel:+919738989797">+91-9738989797</a></li>
+                                <li><a href="tel:+917795629161">+91-7795629161</a></li>
                                 <li><a href="tel:+918792272218">+91-8792272218</a></li>
-                                <li><a href="mailto:info@brillianics.com">info@brillianics.com</a></li>
+                                <li><a href="mailto:vishnu@brillianics.com">vishnu@brillianics.com</a></li>
+                                <li><a href="mailto:manoj@brillianics.com">manoj@brillianics.com</a></li>
                             </ul>
                         </div>
                         <!-- Footer Content Lists End -->
@@ -1183,7 +1199,7 @@
     <!-- Main Footer End -->
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/919738989797?text=Hi%20Brillianics%2C%20I%27d%20like%20to%20know%20more%20about%20JSW%20Steel%20Doors." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with Brillianics on WhatsApp">
+    <a href="https://wa.me/917795629161?text=Hi%20Brillianics%2C%20I%27d%20like%20to%20know%20more%20about%20JSW%20Steel%20Doors." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat with Brillianics on WhatsApp">
         <span class="whatsapp-float__pulse" aria-hidden="true"></span>
         <span class="whatsapp-float__ring" aria-hidden="true"></span>
         <span class="whatsapp-float__btn">
@@ -1222,5 +1238,7 @@
     <script defer src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script defer src="js/function.js"></script>
+    <!-- Web3Forms hCaptcha widget script -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
