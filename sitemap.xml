@@ -6,9 +6,29 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.brillianics.com/collections.html</loc>
+    <loc>https://www.brillianics.com/doors.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.brillianics.com/windows.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.brillianics.com/hardwares.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.brillianics.com/casementwindows.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.brillianics.com/slidingwindows.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.brillianics.com/plainfinishsteeldoors.html</loc>
@@ -26,12 +46,17 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.brillianics.com/firedoors.html</loc>
+    <loc>https://www.brillianics.com/embosseddoors.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.brillianics.com/hardwares.html</loc>
+    <loc>https://www.brillianics.com/steelviewdoors.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.brillianics.com/firedoors.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -39,11 +64,6 @@
     <loc>https://www.brillianics.com/technical.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.brillianics.com/brochures.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.brillianics.com/contact.html</loc>
