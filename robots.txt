@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /pdfs/
 
-Sitemap: https://www.brillianics.com/sitemap.xml
+Sitemap: https://brillianics.com/sitemap.xml
